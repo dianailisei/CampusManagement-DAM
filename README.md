@@ -1,1 +1,3 @@
-# dam
+# DAM
+
+Dezvoltarea aplicatiilor multistrat
