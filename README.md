@@ -1,3 +1,3 @@
-# DAM
+# Campus Management 
 
-Dezvoltarea aplicatiilor multistrat
+.NET Core + Vue.js app
