@@ -1,0 +1,26 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+
+namespace UCM.Domain
+{
+    public class Admin : Entity
+    {
+        public Guid PersonId { get; private set; }
+        public Person Person { get; private set; }
+
+        public ICollection<Article> Articles { get; private set; } = new Collection<Article>();
+
+        public static Admin Create(Person person)
+        {
+            var admin = new Admin
+            {
+                Person = person,
+                PersonId = person.Id
+            };
+
+            return admin;
+        }
+    }
+}
