@@ -4,7 +4,7 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace UCM.Domain
+namespace UCM.Domain.Entities
 {
     public class Person : Entity
     {
