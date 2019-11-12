@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Text;
+using Microsoft.EntityFrameworkCore;
 
 namespace UCM.Persistance
 {
@@ -12,7 +13,7 @@ namespace UCM.Persistance
         public CampusManagementContext CreateDbContext(string[] args)
         {
             IConfigurationRoot configuration = new ConfigurationBuilder()
-                .SetBasePath(Directory.GetParent(Directory.GetCurrentDirectory()).ToString() + "\\CampusManagement.Api\\")
+                .SetBasePath(Directory.GetParent(Directory.GetCurrentDirectory()).ToString() + "\\UCM.Api\\")
                 .AddJsonFile("appsettings.json")
                 .Build();
             var builder = new DbContextOptionsBuilder<CampusManagementContext>();
