@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28307.902
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UCM.Api", "UCM\UCM.Api.csproj", "{7CA262A1-DFC3-43E7-941A-0D646ECC599A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UCM.Api", "UCM.Api\UCM.Api.csproj", "{7CA262A1-DFC3-43E7-941A-0D646ECC599A}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UCM.Domain", "UCM.Domain\UCM.Domain.csproj", "{448D883F-4865-459A-85B5-C4EA5FAA9F66}"
 EndProject

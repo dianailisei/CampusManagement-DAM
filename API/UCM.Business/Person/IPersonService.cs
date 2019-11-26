@@ -1,10 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Threading.Tasks;
+using UCM.Business.Generics;
+using UCM.Business.Person.Models;
 
 namespace UCM.Business.Person
 {
-    interface IPersonService
+    public interface IPersonService : IDetailsService<PersonDetailsModel>
     {
+        Task<Domain.Entities.Person> FindPersonByEmailAsync(string email);
     }
 }

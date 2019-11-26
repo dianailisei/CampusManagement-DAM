@@ -4,6 +4,7 @@ using System.Text;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using UCM.Business.Generics;
 
 namespace UCM.Persistance
 {
@@ -13,6 +14,10 @@ namespace UCM.Persistance
         {
             services.AddDbContext<CampusManagementContext>(options =>
                 options.UseSqlServer(configuration.GetConnectionString("DefaultConnection")));
+
+
+            services.AddScoped<IGenericRepository>(provider =>
+                provider.GetService<CampusManagementContext>());
 
             return services;
         }
