@@ -15,3 +15,4 @@ namespace UCM.Business.Generics
         Task DeleteAsync(IEnumerable<Guid> ids);
     }
 }
+

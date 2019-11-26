@@ -58,6 +58,11 @@ namespace UCM.Business.Generics
             await _genericRepository.DeleteAsync<TEntity>(ids);
             await _genericRepository.SaveAsync();
         }
+
+        public static implicit operator CreateService<TEntity, TCreateEntity>(CreateService<Admin, AdminCreateModel> v)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
 
