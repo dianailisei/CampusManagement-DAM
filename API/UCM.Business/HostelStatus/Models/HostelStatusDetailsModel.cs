@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using UCM.Business.Hostel.Models;
 
 namespace UCM.Business.HostelStatus.Models
 {
