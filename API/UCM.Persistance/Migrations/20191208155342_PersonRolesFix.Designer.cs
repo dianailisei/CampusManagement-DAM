@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using UCM.Persistance;
 
 namespace UCM.Persistance.Migrations
 {
     [DbContext(typeof(CampusManagementContext))]
-    partial class CampusManagementContextModelSnapshot : ModelSnapshot
+    [Migration("20191208155342_PersonRolesFix")]
+    partial class PersonRolesFix
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

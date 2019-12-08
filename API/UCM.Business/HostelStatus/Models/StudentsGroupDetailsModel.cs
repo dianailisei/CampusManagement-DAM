@@ -1,10 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using UCM.Business.Student.Models;
 
 namespace UCM.Business.HostelStatus.Models
 {
     public class StudentsGroupDetailsModel
     {
+
         public Guid Id { get; set; }
 
         public string Gender { get;  set; }

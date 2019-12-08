@@ -5,11 +5,17 @@ using System.Collections.Generic;
 using System.Text;
 using FluentValidation;
 using FluentValidation.AspNetCore;
+using UCM.Business.Admin;
+using UCM.Business.Application;
+using UCM.Business.Article;
 using UCM.Business.Authentication;
 using UCM.Business.Helpers;
+using UCM.Business.Hostel;
+using UCM.Business.HostelStatus;
 using UCM.Business.Person;
 using UCM.Business.Person.Models;
 using UCM.Business.Person.Validations;
+using UCM.Business.Stage;
 using UCM.Business.Student;
 using UCM.Business.Student.Models;
 using UCM.Business.Student.Validations;
@@ -43,9 +49,16 @@ namespace UCM.Business
 
             // Business services area //
             services.AddScoped<IStudentService, StudentService>();
+            services.AddScoped<IAdminService, AdminService>();
             services.AddScoped<IPersonService, PersonService>();
+            services.AddScoped<IArticleService, ArticleService>();
+            services.AddScoped<IApplicationService, ApplicationService>();
+            services.AddScoped<IHostelService, HostelService>();
+            services.AddScoped<IHostelStatusService, HostelStatusService>();
+            services.AddScoped<IStageService, StageService>();
 
             services.AddScoped<IAuthenticationService, AuthenticationService>();
+
             services.AddSingleton<IPasswordHasher, PasswordHasher>();
 
             return services;

@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using AutoMapper;
+using UCM.Business.Admin.Models;
 using UCM.Business.Generics;
+using UCM.Business.Helpers;
 using UCM.Domain.Entities;
 
 namespace UCM.Business.Admin
@@ -11,17 +13,17 @@ namespace UCM.Business.Admin
     public class AdminService : IAdminService
     {
         private readonly IGenericRepository _genericRepository;
-        //private readonly IPasswordHasher _passwordHasher;
+        private readonly IPasswordHasher _passwordHasher;
         private readonly IMapper _mapper;
 
         private readonly DetailsService<UCM.Domain.Entities.Admin, AdminDetailsModel> _detailsService;
         private readonly CreateService<UCM.Domain.Entities.Admin, AdminCreateModel> _createService;
 
-        public AdminService(IGenericRepository genericRepository, IMapper mapper)//, IPasswordHasher passwordHasher)
+        public AdminService(IGenericRepository genericRepository, IMapper mapper, IPasswordHasher passwordHasher)
         {
             _genericRepository = genericRepository;
             _mapper = mapper;
-           // _passwordHasher = passwordHasher;
+            _passwordHasher = passwordHasher;
 
             _detailsService = new DetailsService<UCM.Domain.Entities.Admin, AdminDetailsModel>
                 (genericRepository, mapper);

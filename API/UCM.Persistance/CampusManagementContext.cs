@@ -20,6 +20,7 @@ namespace UCM.Persistance
 
         internal DbSet<Person> Persons { get; private set; }
         internal DbSet<Role> Roles { get; private set; }
+        internal  DbSet<PersonRole> PersonRoles { get; private set; }
         internal DbSet<Student> Students { get; private set; }
         internal DbSet<Admin> Admins { get; private set; }
 
@@ -96,7 +97,7 @@ namespace UCM.Persistance
         {
             var query = SetIncludes<T>(includes);
 
-            var result = query.Where(t => t.IsAvailable).Where(predicate).ToList();
+            var result = await query.Where(t => t.IsAvailable).Where(predicate).ToListAsync();
             return result;
         }
 

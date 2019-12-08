@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using UCM.Business.Admin.Models;
 using UCM.Domain.Entities;
 
 namespace UCM.Business.Generics
@@ -59,7 +60,7 @@ namespace UCM.Business.Generics
             await _genericRepository.SaveAsync();
         }
 
-        public static implicit operator CreateService<TEntity, TCreateEntity>(CreateService<Admin, AdminCreateModel> v)
+        public static implicit operator CreateService<TEntity, TCreateEntity>(CreateService<Domain.Entities.Admin, AdminCreateModel> v)
         {
             throw new NotImplementedException();
         }

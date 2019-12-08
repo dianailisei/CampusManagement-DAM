@@ -3,28 +3,28 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using AutoMapper;
-using CampusManagement.Business.Application.Models;
-using CampusManagement.Business.Generics;
-using CampusManagement.Business.HostelStatus.Models;
+using UCM.Business.Application.Models;
+using UCM.Business.Generics;
+using UCM.Business.HostelStatus.Models;
 
-namespace CampusManagement.Business.Application
+namespace UCM.Business.Application
 {
     public class ApplicationService : IApplicationService
     {
         private readonly IGenericRepository _genericRepository;
         private readonly IMapper _mapper;
 
-        private readonly DetailsService<Domain.Entities.Application, ApplicationDetailsModel> _detailsService;
-        private readonly CreateService<Domain.Entities.Application, ApplicationCreateModel> _createService;
+        private readonly DetailsService<UCM.Domain.Entities.Application, ApplicationDetailsModel> _detailsService;
+        private readonly CreateService<UCM.Domain.Entities.Application, ApplicationCreateModel> _createService;
 
         public ApplicationService(IGenericRepository genericRepository, IMapper mapper)
         {
             _genericRepository = genericRepository;
             _mapper = mapper;
 
-            _detailsService = new DetailsService<Domain.Entities.Application, ApplicationDetailsModel>
+            _detailsService = new DetailsService<UCM.Domain.Entities.Application, ApplicationDetailsModel>
                 (genericRepository, mapper);
-            _createService = new CreateService<Domain.Entities.Application, ApplicationCreateModel>
+            _createService = new CreateService<UCM.Domain.Entities.Application, ApplicationCreateModel>
                 (genericRepository, mapper);
         }
 
@@ -72,9 +72,9 @@ namespace CampusManagement.Business.Application
         {
             //var hostelStatus = await _genericRepository.GetAsync<Domain.Entities.HostelStatus>(id,"Hostel");
 
-            var applications = await _genericRepository.GetAllAsync<Domain.Entities.Application>("Student", "Student.Person");
+            var applications = await _genericRepository.GetAllAsync<UCM.Domain.Entities.Application>("Student", "Student.Person");
 
-            var students = await _genericRepository.GetAllAsync<Domain.Entities.Student>("Person");
+            var students = await _genericRepository.GetAllAsync<UCM.Domain.Entities.Student>("Person");
 
             IList<StudentsYearDistribution> yearDistributions = new List<StudentsYearDistribution>();
 
