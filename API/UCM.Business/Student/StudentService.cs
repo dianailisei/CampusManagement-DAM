@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using AutoMapper;
 using UCM.Business.Generics;
 using UCM.Business.Helpers;
+using UCM.Business.Student.Builder;
 using UCM.Business.Student.Models;
 using UCM.Domain.Entities;
 
@@ -49,9 +50,25 @@ namespace UCM.Business.Student
             var studentRolesGuid = _genericRepository.FindAsync<Role>(r => r.Name == "Student").Result.Select(p => p.Id)
                 .ToList();
 
+            StudentBuilder studentBuilder = new StudentBuilder();
+
+            studentBuilder.SetFirstName(entity.FirstName);
+            studentBuilder.SetLastName(entity.LastName);
+            studentBuilder.SetEmail(entity.Email);
+            studentBuilder.SetGender(entity.Gender);
+            studentBuilder.SetPassword(_passwordHasher.HashPassword(entity.Password));
+            studentBuilder.SetYear(entity.Year);
+            studentBuilder.SetCnp(entity.Cnp);
+            studentBuilder.SetNationality(entity.Nationality);
+            studentBuilder.SetScore(entity.Score);
+            studentBuilder.SetSecondScore(entity.SecondScore);
+
+            var studentModel = studentBuilder.Build();
+
             var person = Domain.Entities.Person.Create(entity.FirstName, entity.LastName,
                 entity.Email, entity.Gender, _passwordHasher.HashPassword(entity.Password), studentRolesGuid);
 
+            
             var student = Domain.Entities.Student.Create(person, entity.Year, entity.Cnp,
                 entity.Nationality, entity.Score, entity.SecondScore);
 
