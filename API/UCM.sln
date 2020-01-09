@@ -1,15 +1,19 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.28307.902
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29519.181
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UCM.Api", "UCM.Api\UCM.Api.csproj", "{7CA262A1-DFC3-43E7-941A-0D646ECC599A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UCM.Domain", "UCM.Domain\UCM.Domain.csproj", "{448D883F-4865-459A-85B5-C4EA5FAA9F66}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UCM.Domain", "UCM.Domain\UCM.Domain.csproj", "{448D883F-4865-459A-85B5-C4EA5FAA9F66}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UCM.Business", "UCM.Business\UCM.Business.csproj", "{C9DB58E4-7840-4320-975A-087110BA8461}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UCM.Business", "UCM.Business\UCM.Business.csproj", "{C9DB58E4-7840-4320-975A-087110BA8461}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UCM.Persistance", "UCM.Persistance\UCM.Persistance.csproj", "{D49DC2F9-4AAF-40BB-B788-F52D5D854323}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UCM.Persistance", "UCM.Persistance\UCM.Persistance.csproj", "{D49DC2F9-4AAF-40BB-B788-F52D5D854323}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UCM.Tests", "UCM.Tests\UCM.Tests.csproj", "{791D78B0-5E24-44D3-A147-C2C8F1120399}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Adapter", "Adapter\Adapter.csproj", "{B490729D-A71A-4E57-9EB9-83CD28D29FCA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +37,14 @@ Global
 		{D49DC2F9-4AAF-40BB-B788-F52D5D854323}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D49DC2F9-4AAF-40BB-B788-F52D5D854323}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D49DC2F9-4AAF-40BB-B788-F52D5D854323}.Release|Any CPU.Build.0 = Release|Any CPU
+		{791D78B0-5E24-44D3-A147-C2C8F1120399}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{791D78B0-5E24-44D3-A147-C2C8F1120399}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{791D78B0-5E24-44D3-A147-C2C8F1120399}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{791D78B0-5E24-44D3-A147-C2C8F1120399}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B490729D-A71A-4E57-9EB9-83CD28D29FCA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B490729D-A71A-4E57-9EB9-83CD28D29FCA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B490729D-A71A-4E57-9EB9-83CD28D29FCA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B490729D-A71A-4E57-9EB9-83CD28D29FCA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

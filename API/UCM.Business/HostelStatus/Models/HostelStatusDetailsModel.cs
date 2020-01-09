@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using UCM.Business.Hostel.Models;
+using UCM.Business.StateDesignPattern;
 
 namespace UCM.Business.HostelStatus.Models
 {
@@ -18,10 +19,15 @@ namespace UCM.Business.HostelStatus.Models
         public int FemaleSeats { get; private set; }
         public int OccupiedFemaleSeats { get; private set; }
         public int ReservedFemaleSeats { get; private set; }
-
+        public HostelMaleSeatsAvailability state { get; set; }
 
         public ICollection<StudentsGroupDetailsModel> StudentsGroups { get; private set; }
 
         public DateTimeOffset CreatedDateTime { get; private set; }
+
+        public HostelStatusDetailsModel()
+        {
+            state = new FullAvailableMaleSeats(state);
+        }
     }
 }
